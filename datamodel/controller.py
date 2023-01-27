@@ -3,9 +3,9 @@ from typing import Optional as Opt, List
 from logging import getLogger, INFO
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
-from configuration import configuration as cfg
-from model import ZipCodes, ZipCodesIT
-from sqlengine import SqlEngine
+from .configuration import configuration as cfg
+from .model import ZipCodes, ZipCodesIT
+from .sqlengine import SqlEngine
 
 
 class Controller:
