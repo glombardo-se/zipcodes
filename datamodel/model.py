@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, REAL
-from sqlengine import Base, SqlEngine
+from .sqlengine import Base, SqlEngine
+from typing import Tuple, Any
 
 
 class ZipCodes(Base):
@@ -23,6 +24,17 @@ class ZipCodes(Base):
     longitude = Column(REAL, nullable=True)
     accuracy = Column(Integer, nullable=True)
     coordinates = Column(String, nullable=True)
+
+    def to_tuple(self) -> Tuple[Any]:
+        """
+        It returns a tuple representation of the current object.
+
+        :return: See description.
+        :rtype: Tuple[Any].
+        """
+        return self.postalcode, self.countrycode, self.placename, self.adminname1, self.admincode1,\
+                self.adminname2, self.admincode2, self.adminname3, self.admincode3, self.latitude,\
+                self.longitude, self.accuracy, self.coordinates
 
     def __repr__(self) -> str:
         """
@@ -82,4 +94,3 @@ if __name__ == '__main__':
         data = session.query(ZipCodesIT).all()
         for item in data:
             print(item)
-
