@@ -5,7 +5,7 @@ with open("ReadMe.md", "r") as fh:
 
 setuptools.setup(
     name='zipcodes',
-    version='1.0.0',
+    version="1.0.0",
     author="Giovanni Lombardo",
     author_email="g.lombardo@pm.me",
     packages=['.'],
