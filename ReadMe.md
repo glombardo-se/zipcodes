@@ -1,13 +1,15 @@
 # zipcodes
 
 ### Description
-The purpose of this python package is to allow easy retrieval of World's 
-postal codes (aka zipcodes). It allows both, retrieval of postal codes
-by placename and retrieval of placenames by postal code.
+The purpose of this `Python` package is to allow easy retrieval of the world's 
+postal codes (aka zipcodes). At the current release it consents:
+
++ to retrieve the postal code of a given placename
++ to retrieve the placenames of a given postal code
 
 ### Installation
 ```bash
-pip install ./zipcodes.wheel
+pip install ./zipcodes.zip
 ```
 
 ### Usage
