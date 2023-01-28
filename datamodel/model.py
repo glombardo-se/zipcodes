@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, REAL
-from .sqlengine import Base, SqlEngine
+from sqlengine import Base, SqlEngine
 from typing import Tuple, Any
 
 
