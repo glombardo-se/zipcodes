@@ -68,6 +68,8 @@ def main(args: Namespace) -> int:
         try:
             engine = SqlEngine.get_sqlite_engine(cfg['db_folder'] / 'zipcodes.db')
             for code, name in countrycodes.items():
+
+                # Skip Italy because we have a more complete dataset.
                 if code == 'IT':
                     continue
                 with Session(bind=engine) as session, session.begin():
