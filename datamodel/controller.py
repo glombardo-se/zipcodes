@@ -3,9 +3,9 @@ from typing import Optional as Opt, List
 from logging import getLogger, INFO
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
-from .configuration import configuration as cfg
-from .model import ZipCodes, ZipCodesIT
-from .sqlengine import SqlEngine
+from configuration import configuration as cfg
+from model import ZipCodes, ZipCodesIT
+from sqlengine import SqlEngine
 
 
 class Controller:
@@ -19,12 +19,7 @@ class Controller:
         """
         self.logger = getLogger(__name__)
         self.logger.debug(f'Controller created at: {datetime.now().strftime("%Y/%m/%d %H:%M:%S")}')
-
-        self.dbname_all = cfg['db_folder'] / 'zipcodes.db'
         self.dbname_it = cfg['db_folder'] / 'zipcodes_IT.db'
-        self.logger.debug(f'dbname: {self.dbname_all.__str__()}')
-
-        self.engine_all = SqlEngine.get_sqlite_engine(self.dbname_all.__str__())
         self.engine_it = SqlEngine.get_sqlite_engine(self.dbname_it.__str__())
         self.logger.debug(f'SqlEngine created at: {datetime.now().strftime("%Y/%m/%d %H:%M:%S")}')
 
@@ -47,9 +42,13 @@ class Controller:
                     data = session.query(ZipCodesIT).\
                         filter(ZipCodesIT.Comune == f'{placename}').all()
                     return data[0].CAP if data else None
-            with Session(bind=self.engine_all) as session, session.begin():
-                data = session.query(ZipCodes).\
-                    filter(ZipCodes.placename == f'{placename}', ZipCodes.countrycode == f'{countrycode}').all()
+
+            dbname = cfg['db_folder'] / f'zipcodes_{countrycode}.db'
+            engine = SqlEngine.get_sqlite_engine(dbname.__str__())
+            with Session(bind=engine) as session, session.begin():
+                data = session.query(ZipCodes).filter(
+                    ZipCodes.placename == f'{placename}',
+                    ZipCodes.countrycode == f'{countrycode}').all()
                 return data[0].postalcode if data else None
         except SQLAlchemyError as e:
             self.logger.error(f'{e.__str__()}')
@@ -71,13 +70,18 @@ class Controller:
         try:
             if countrycode == 'IT':
                 with Session(bind=self.engine_it) as session, session.begin():
-                    data = session.query(ZipCodesIT).\
-                        filter(ZipCodesIT.CAP == f'{zipcode}').all()
+                    data = session.query(ZipCodesIT).filter(
+                        ZipCodesIT.CAP == f'{zipcode}'
+                    ).all()
                     return [item.Comune for item in data] if data else None
 
-            with Session(bind=self.engine_all) as session, session.begin():
-                data = session.query(ZipCodes).\
-                    filter(ZipCodes.countrycode == f'{countrycode}', ZipCodes.postalcode == f'{zipcode}').all()
+            dbname = cfg['db_folder'] / f'zipcodes_{countrycode}.db'
+            engine = SqlEngine.get_sqlite_engine(dbname.__str__())
+            with Session(bind=engine) as session, session.begin():
+                data = session.query(ZipCodes).filter(
+                    ZipCodes.countrycode == f'{countrycode}',
+                    ZipCodes.postalcode == f'{zipcode}'
+                ).all()
                 return [item.placename for item in data] if data else None
         except SQLAlchemyError as e:
             self.logger.error(f'{e.__str__()}')
