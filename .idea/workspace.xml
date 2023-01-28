@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a8836dc-645f-432e-80d5-9eff15e52fad" name="Changes" comment="Applied some formatting and added some bits to ReadMe.md.">
+    <list default="true" id="8a8836dc-645f-432e-80d5-9eff15e52fad" name="Changes" comment="Changed version quotes to double for building substitution.">
+      <change afterPath="$PROJECT_DIR$/data/zipcodes_IT.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/splitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/splitter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datamodel/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/datamodel/controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datamodel/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/datamodel/model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,10 +31,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/giovanni/PycharmProjects/zipcodes/data",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -40,6 +45,40 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="controller" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="zipcodes" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datamodel" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datamodel/controller.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.controller" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -49,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1674596908335</updated>
       <workItem from="1674596910229" duration="1036000" />
-      <workItem from="1674835614693" duration="4010000" />
+      <workItem from="1674835614693" duration="6050000" />
     </task>
     <task id="LOCAL-00001" summary="Project files.">
       <created>1674597125238</created>
@@ -93,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674840240014</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Changed version quotes to double for building substitution.">
+      <created>1674848925891</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1674848925891</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,9 +163,11 @@
     <MESSAGE value="Added typing import Tuple, Any." />
     <MESSAGE value="Changed project files." />
     <MESSAGE value="Applied some formatting and added some bits to ReadMe.md." />
-    <option name="LAST_COMMIT_MESSAGE" value="Applied some formatting and added some bits to ReadMe.md." />
+    <MESSAGE value="Changed version quotes to double for building substitution." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed version quotes to double for building substitution." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/zipcodes$controller.coverage" NAME="controller Coverage Results" MODIFIED="1674851085061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/datamodel" />
     <SUITE FILE_PATH="coverage/zipcodes$splitter.coverage" NAME="splitter Coverage Results" MODIFIED="1674816207365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
   </component>
 </project>
