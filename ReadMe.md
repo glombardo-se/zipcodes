@@ -1,5 +1,7 @@
 # zipcodes
 
+[![Build status](https://ci.appveyor.com/api/projects/status/e2hblc7axubj8r84?svg=true)](https://ci.appveyor.com/project/glombardo-se/zipcodes)
+
 ### Description
 The purpose of this `Python` package is to allow easy retrieval of the world's 
 postal codes (aka zipcodes). At the current release it consents:
